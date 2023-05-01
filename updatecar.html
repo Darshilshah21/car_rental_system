@@ -1,0 +1,64 @@
+<!-- MRUTYUNJAYSINH VAGHELA-1002078423
+DARSHIL SHAH-1002084331 -->
+ <head>
+  <style>
+      table,
+      th,
+      td {
+          border: 1px solid black;
+          text-align: center;
+      }
+
+      .cont1 {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: lightblue;
+      }
+
+      .divScroll {
+          overflow-x: auto;
+      }
+  </style>
+</head>
+
+<body style="background-image: url('/static/images/car4.jpg');">
+  <div>
+      <div>
+          <div class="divScroll">
+              <h1 style="text-align: center;">Update Cars Details</h1>
+              <form method="POST" action="/update_car">
+                  <table class="cont1">
+                      <tr>
+                          <th>vehicle Id</th>
+                          <th>Model</th>
+                          <th>Year</th>
+                          <th>Category</th>
+                          <th>Daily Rate</th>
+                          <th>Weekly Rate</th>
+                          <th>Available</th>
+                          <th>Car Type</th>
+                          <th>Owner ID</th>
+                          <!-- <th>Action</th> -->
+                      </tr>
+                      {% for record in records %}
+                      <tr>
+                        <td><input type="hidden" id="vehicle_id" name="vehicle_id" value="{{ record[0] }}" required /></td>
+                          <td><input type="text" id="model" name="model" value="{{ record[1] }}" required /></td>
+                          <td><input type="text" id="year" name="year" value="{{ record[2] }}" required /></td>
+                          <td><input type="text" id="category" name="category" value="{{ record[3] }}" required /></td>
+                          <td><input type="text" id="daily_rate" name="daily_rate" value="{{ record[4] }}" required /></td>
+                          <td><input type="text" id="weekly_rate" name="weekly_rate" value="{{ record[5] }}" required /></td>
+                          <td><input type="text" id="available" name="available" value="{{ record[6] }}" required /></td>
+                          <td><input type="text" id="car_type" name="car_type" value="{{ record[7] }}" required /></td>
+                          <td><input type="text" id="own_id" name="own_id" value="{{ record[8] }}" required /></td>
+                          <input type="hidden" name="id" value="{{ record[0] }}">
+                          <td><button type="submit" name="update" value="{{ record[0] }}">Update</button></td>
+                      </tr>
+                      {% endfor %}
+                  </table>
+              </form>
+          </div>
+      </div>
+  </div>
+</body>

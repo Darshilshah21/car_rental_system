@@ -1,0 +1,65 @@
+<!-- MRUTYUNJAYSINH VAGHELA-1002078423
+DARSHIL SHAH-1002084331 -->
+<head>
+  <style>
+
+  table,
+              th,
+              td {
+                  border: 1px solid black;
+                  text-align: center;
+                  
+              }
+
+  .cont1{
+      text-align: center;
+      margin-left:auto;
+      margin-right:auto;
+      background-color:lightblue;
+  }
+  .divScroll {
+      overflow-x:auto;
+      /* height:100px;
+      width:200px; */
+      }
+
+  </style>
+  </head>
+<body >
+  <div>
+      <div  style="background-image: url('/static/images/car2.jpg');"> 
+              <h1 style="text-align: center;">Available Cars</h1>
+              <table class="cont1">
+                <tr>
+                  <th>Model</th>
+                  <th>Year</th>
+                  <th>Category</th>
+                  <th>Daily_Rate</th>
+                  <th>Weekly_Rate</th>
+                  <th>Available</th>
+                  <th>Car_Type</th>
+                  
+                </tr>
+                <tbody>
+                <tr>
+                  {% for record in records %}
+                  <td>{{ record[1] }}</td>
+                  <td>{{ record[2] }}</td>
+                  <td>{{ record[3] }}</td>
+                  <td>${{ record[4] }}</td>
+                  <td>${{ record[5] }}</td>
+                  <td>{{ record[6] }}</td>
+                  <td>{{ record[7] }}</td>
+                 
+                  
+                  
+                </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+          </div>
+
+      </div>
+</div>
+</body>
+

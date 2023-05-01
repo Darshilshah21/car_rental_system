@@ -1,0 +1,46 @@
+<!-- MRUTYUNJAYSINH VAGHELA-1002078423
+DARSHIL SHAH-1002084331 -->
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        text-align: center;
+        
+    }
+    .cont{
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:bisque;
+    }
+    .cont1{
+        background-image: url('C:/Users/darsh/Downloads/dbprojectpart3/misc/img/car2.jpg');
+    }
+    </style>
+<body class="cont1" style="background-image: url('/static/images/car2.jpg');"> 
+    <h1 style="text-align: center;">View Customer</h1>
+    
+    <table class="cont">
+    
+            <tr>
+                <th>Cust_ID</th>
+                <th>F_name</th>
+                <th>L_name</th>
+                <th>Contact_no</th>
+                <th>C_type</th>
+            </tr>
+  
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+                <td>{{ record[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>

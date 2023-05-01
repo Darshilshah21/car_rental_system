@@ -1,0 +1,162 @@
+
+<!-- MRUTYUNJAYSINH VAGHELA-1002078423
+DARSHIL SHAH-1002084331 -->
+<head>
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 2px 1px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #008CBA;
+    }
+    
+    .button2:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+    .dis{
+        border: none;
+        margin: 4px 2px;
+        padding: 6px 16px;
+    }
+    .cont{
+        
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:bisque;
+    }
+    .cont2{
+        border: none;
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    table,
+                th,
+                td {
+                    border: 1px solid black;
+                    text-align: center;
+                    
+                }
+  
+    .cont1{
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:lightblue;
+    }
+    .divScroll {
+        overflow-x:auto;
+        /* height:100px;
+        width:200px; */
+        }
+  
+    </style>
+    </head>
+<body >
+    <div>
+        <div class="cont">
+            <table  class="cont2">
+        
+                    <tr>
+                        <td class="dis" >
+                            <form action="/add_customer" >
+                                <input type="submit" value="ADD NEW CUSTOMER" class="button button2">
+                            </form>
+
+                            <!-- <button type="submit" onclick="window.location.href='addcustomer.html'" class="button button2" >ADD CUSTOMER</button> -->
+                        </td>
+                        <td class="dis">
+                            <form action="/add_car" >
+                                <input type="submit" value="ADD NEW CAR" class="button button2">
+                            </form>
+                        </td>
+                        <td class="dis">
+                            <form action="/add_owner" >
+                                <input type="submit" value="ADD NEW OWNER" class="button button2">
+                            </form>
+                        </td>
+                        </td>
+                        <td class="dis">
+                            <form action="/update_car" >
+                                <input type="submit" value="UPDATE CAR" class="button button2">
+                            </form>
+                        </td>
+                        <td class="dis">
+                            <form action="/add_rental" >
+                                <input type="submit" value="BOOK CAR" class="button button2">
+                            </form>
+                        </td>
+                        <td class="dis">
+                            <form action="/view_customer" >
+                                <input type="submit" value="VIEW CUSTOMER" class="button button2">
+                            </form>
+                        </td>
+                        <td class="dis">
+                            <form action="/view_car" >
+                                <input type="submit" value="VIEW CAR" class="button button2">
+                            </form>
+                    <!-- </tr>
+                    <tr>         -->
+                       
+                        <td class="dis">
+                            <form action="/view_report" >
+                                <input type="submit" value="VIEW REPORT" class="button button2">
+                            </form>
+                        </td>
+                      
+                        <td class="dis">
+                            <form action="/view_rental" >
+                                <input type="submit" value="VIEW BOOK CAR" class="button button2">
+                            </form>
+                        </td>
+                </tr>
+            </table>
+        </div>
+        <div  style="background-image: url('/static/images/car1.jpg');">
+            <div class="divScroll"> 
+                <h1 style="text-align: center;">Available Cars</h1>
+                <table class="cont1">
+                  <tr>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Category</th>
+                    <th>Daily_Rate</th>
+                    <th>Weekly_Rate</th>
+                    <th>Available</th>
+                    <th>Car_Type</th>
+                  </tr>
+                  <tbody>
+                  <tr>
+                    {% for record in records %}
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[2] }}</td>
+                    <td>{{ record[3] }}</td>
+                    <td>${{ record[4] }}</td>
+                    <td>${{ record[5] }}</td>
+                    <td>{{ record[6] }}</td>
+                    <td>{{ record[7] }}</td>
+                    
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+
+        </div>
+  </div>
+</body>
+

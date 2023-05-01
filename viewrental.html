@@ -1,0 +1,72 @@
+<!-- MRUTYUNJAYSINH VAGHELA-1002078423
+DARSHIL SHAH-1002084331 -->
+<head>
+    <style>
+  
+    table,
+                th,
+                td {
+                    border: 1px solid black;
+                    text-align: center;
+                    
+                }
+  
+    .cont1{
+        text-align: center;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:lightblue;
+    }
+    .divScroll {
+        overflow-x:auto;
+        /* height:100px;
+        width:200px; */
+        }
+  
+    </style>
+    </head>
+  <body style="background-image: url('/static/images/car2.jpg');">
+    <div>
+        <div  >
+            <div class="divScroll"> 
+                <h1 style="text-align: center;">View Rental CAR</h1>
+                <table class="cont1">
+                  <tr>
+                    <th>VEHICLE_ID</th>
+                    <th>CUST_ID</th>
+                    <th>F_NAME</th>
+                    <th>L_NAME</th>
+                    <th>RENTAL_TYPE</th>
+                    <th>CATEGORY</th>
+                    <th>START_DATE</th>
+                    <th>END_DATE</th>
+                    <th>MODEL</th>
+                    <th>C_TYPE</th>
+                
+                  </tr>
+                  <tbody>
+                  <tr>
+                    {% for record in records %}
+                    <td>{{ record[2] }}</td>
+                    <td>{{ record[9] }}</td>
+                    <td>{{ record[6] }}</td>
+                    <td>{{ record[8] }}</td>
+                    <td>{{ record[3] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[4] }}</td>
+                    <td>{{ record[5] }}</td>
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[7] }}</td>
+                    
+                    
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+  
+        </div>
+  </div>
+  </body>
+  
+  
